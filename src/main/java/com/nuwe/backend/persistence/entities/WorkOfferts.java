@@ -33,14 +33,6 @@ public class WorkOfferts {
     @Column(name = Constants.WORK_TYPE, length = 30)
     private String workType;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getTitle() {
         return title;
     }

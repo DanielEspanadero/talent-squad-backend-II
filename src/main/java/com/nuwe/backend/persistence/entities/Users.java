@@ -21,14 +21,6 @@ public class Users {
     @Column(name = Constants.PASSWORD, length = 20)
     private String password;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getName(String name) {
         return this.name;
     }

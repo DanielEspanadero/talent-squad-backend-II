@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(Constants.WORK_OFFERTS_PATH)
-public class WorkOffertsController {
-
+@RequestMapping(Constants.SUSCRIPTIONS_PATH)
+public class SuscriptionController {
 }
