@@ -1,37 +1,46 @@
 package com.nuwe.backend.persistence.entities;
 
 import com.nuwe.backend.util.Constants;
-import org.apache.tomcat.util.bcel.Const;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = Constants.WORKS_OFFERTS)
+@Table(name = Constants.WORK_OFFERTS)
 public class WorkOfferts {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long id;
 
-    @Column(name = Constants.TITLE, length = 30)
+    @Column(name= Constants.TITLE, nullable = false)
     private String title;
 
-    @Column(name = Constants.COMPANY_NAME, length = 30)
+    @Column(name = Constants.COMPANY_NAME)
     private String companyName;
 
-    @Column(name = Constants.DESCRIPTION, length = 1000)
+    @Column(name = Constants.DESCRIPTION)
     private String description;
 
-    @Column(name = Constants.SKILLS, length = 120)
+    @Column(name = Constants.SKILLS)
     private String skills;
 
-    @Column(name = Constants.MARKET, length = 20)
+    @Column(name = Constants.MARKET)
     private String market;
 
-    @Column(name = Constants.WORK_TYPE, length = 30)
+    @Column(name = Constants.WORK_TYPE)
     private String workType;
+
+    @Column(name = Constants.COMPANY_LOCATION)
+    private String companyLocation;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -88,7 +97,4 @@ public class WorkOfferts {
     public void setCompanyLocation(String companyLocation) {
         this.companyLocation = companyLocation;
     }
-
-    @Column(name="company-location", length = 30)
-    private String companyLocation;
 }

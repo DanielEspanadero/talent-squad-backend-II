@@ -10,30 +10,16 @@ import java.util.List;
 public class Suscription {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long id;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = Constants.USERS_ID)
-    private List<Users> users;
+    private Users users;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = Constants.WORK_OFFERTS_ID)
-    private List <WorkOfferts> workOfferts;
+    private WorkOfferts workOfferts;
 
-    public List<Users> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<Users> users) {
-        this.users = users;
-    }
-
-    public List<WorkOfferts> getWorkOfferts() {
-        return workOfferts;
-    }
-
-    public void setWorkOfferts(List<WorkOfferts> workOfferts) {
-        this.workOfferts = workOfferts;
-    }
 }

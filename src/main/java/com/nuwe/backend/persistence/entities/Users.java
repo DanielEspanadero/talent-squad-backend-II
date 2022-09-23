@@ -9,16 +9,17 @@ import javax.persistence.*;
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long id;
 
-    @Column(name = Constants.NAME, length = 20)
+    @Column(name = Constants.NAME, length = 20, nullable = false)
     private String name;
 
-    @Column(name = Constants.EMAIL, length = 40)
+    @Column(name = Constants.EMAIL, length = 40, nullable = false)
     private String email;
 
-    @Column(name = Constants.PASSWORD, length = 20)
+    @Column(name = Constants.PASSWORD, length = 20, nullable = false)
     private String password;
 
     public String getName(String name) {
