@@ -9,6 +9,7 @@ public class Constants {
     public static final String ALL_PATH = "/all";
     public static final String WORK_OFFERTS_PATH = "/workofferts";
     public static final String SUSCRIPTIONS_PATH = "/suscriptions";
+    public static final String ADD_USER = "/add-user";
 
 //    Entities
     public static final String USERS = "users";

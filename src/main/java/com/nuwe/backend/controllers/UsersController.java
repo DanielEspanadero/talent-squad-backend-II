@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,5 +27,10 @@ public class UsersController {
 
         return usersService.getUsers();
 
+    }
+
+    @PostMapping(Constants.ADD_USER)
+    private Users saveUsers(@RequestBody Users user){
+        return this.usersService.saveUser(user);
     }
 }
